@@ -1,0 +1,143 @@
+@import "mixin";
+@import "color";
+@import "const";
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid $azure;
+  width: 604px;
+  height: 541px;
+  background: rgba(39, 42, 56, 0.5);
+  @include flexcolumn;
+  border-radius: 5px;
+  &__block {
+    width: 468px;
+    height: 71px;
+    margin-top: 67px;
+    color: $white;
+    @include tahomanormal;
+    @include flexrowcenter;
+  }
+  &__image {
+    background-image: url(../../assets/loginlogo.svg);
+    width: 126px;
+    height: 60px;
+    margin-right: 17px;
+  }
+  &__line {
+    width: 2px;
+    height: 64px;
+    background-color: $white;
+    margin-right: 17px;
+  }
+  &__title {
+    font-size: 22px;
+    line-height: 26px;
+    color: $azure;
+  }
+  &__subtitle {
+    color: $white;
+  }
+  &__fields {
+    width: 445px;
+    height: 161px;
+    margin-top: 50px;
+    @include flexcentercolumn;
+
+  }
+  &__input {
+    background-color: transparent;
+    border: 0;
+    @include tahomanormal;
+    font-size: 18px;
+    line-height: 20px;
+    color: $white;
+    width: 150px;
+    text-overflow: ellipsis;
+    outline:none;
+    border: none;
+    &_password {
+      -webkit-text-security: square;
+    }
+  }
+  &__field {
+    @include flexrowcenter;
+    width: 445px;
+    height: 70px;
+    border: 1px solid $grayish;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: $black-theme;
+    >input:focus ~ span{
+      width: 442px;
+      height: 70px;
+      background: rgba(0, 137, 255, 0.2);
+      border: 1px solid #0089FF;
+      border-radius: 2px;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  &__field:last-child {
+    margin-top: 21px;
+  }
+  &__image-login{
+    background-image: url(../../assets/loginfields.svg);
+    width: 25px;
+    height: 25px;
+    margin-left: 23px;
+    margin-right: 15px;
+  }
+  &__image-password {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../../assets/passfields.svg);
+    margin-left: 23px;
+    margin-right: 15px;
+    &_eye {
+      width: 25px;
+      height: 25px;
+      background-image: url(../../assets/passeyefields.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      border: 0;
+      background-color: transparent;
+      margin-left: 180px;
+      &:hover {
+        background-image: url(../../assets/passeyefieldsactive.svg);
+        @include pointer;
+      }
+    }
+  }
+  &__button {
+    width: 445px;
+    height: 57px;
+    margin-top: 71px;
+    border-radius: 2px;
+    color: $white;
+    background-color: $gray;
+    @include tahomanormal;
+    @include pointer;
+    border: 0;
+    &:hover{
+      background-color: $azure;
+    }
+  }
+}
+::-webkit-input-placeholder {color:$lam}
+
+.logo-back {
+  background-image: url(../../assets/logoback.svg);
+  width: 100vw;
+  min-height: 100vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -25%;
+}

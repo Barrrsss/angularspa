@@ -1,0 +1,36 @@
+@import "mixin";
+@import "color";
+@import "const";
+
+.tasks {
+  &__header {
+    max-width: 100vw;
+    height: 60px;
+    background-color: $grayish;
+  }
+  &__buttons {
+
+  }
+  &__button{
+    width: 147px;
+    height: 40px;
+    margin-left: 12px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    background-color: $gray;
+    color: $white;
+    @include tahomanormal;
+    &:last-child{
+      margin-left: 9px;
+    }
+    &:hover{
+      @include pointer;
+      background-color: $azure;
+    }
+    &_active {
+      background-color: $azure;
+    }
+  }
+}

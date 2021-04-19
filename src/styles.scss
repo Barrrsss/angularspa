@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "mixin";
+@import "color";
+@import "const";
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts/fonts.css");
+
+body {
+  @include m0a ();
+}
