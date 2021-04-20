@@ -1,5 +1,32 @@
 <div class="task">
   <div class="task__circle">
+    <div class="task__progress">
+      <div class="task__data">
+        <div class="task__data-title">ТН</div>
+        <div class="task__data-name">Выработка</div>
+        <div class="task__data-current">30 094</div>
+        <div class="task__data-target">31 265</div>
+        <div class="task__data-diff">-1 171</div>
+      </div>
+      <circle-progress
+        [percent]="96"
+        [radius]="126"
+        [outerStrokeWidth]="6"
+        [innerStrokeWidth]="6"
+        [outerStrokeColor]="'#fff'"
+        [innerStrokeColor]="'rgba(247, 147, 30, 0.2)'"
+        [animation]="true"
+        [animationDuration]="300"
+        [title] = ''
+        [subtitle] = ''
+        [space] = -6
+        [backgroundColor]="'#12151E'"
+        [backgroundStroke]="'rgba(39, 42, 56, 0.5)'"
+        [backgroundStrokeWidth]=18
+      >
+      </circle-progress>
+
+    </div>
 
   </div>
 </div>

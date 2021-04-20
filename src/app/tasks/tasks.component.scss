@@ -33,4 +33,22 @@
       background-color: $azure;
     }
   }
+  &__logout {
+    width: 65px;
+    height: 60px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    background-image: url(../../assets/logout.svg);
+    border-left: 1px solid black;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:hover {
+      background-image: url(../../assets/logoutactive.svg);
+      @include pointer;
+    }
+  }
 }

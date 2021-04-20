@@ -14,4 +14,41 @@
     height: 335px;
     background-image: url(../../assets/circle.svg);
   }
+  &__progress {
+    margin-left: 18px;
+    margin-top: 18px;
+  }
+  &__data{
+    color: white;
+    position: absolute;
+    z-index: 2;
+    left: 345px;
+    top: 350px;
+    @include tahomanormal;
+    @include flexcentercolumn;
+    &-title{
+      @include f24;
+      color: $deepblue;
+      margin-bottom: 19px;
+    }
+    &-name {
+      @include f24;
+      color: $barv;
+      margin-bottom: 15px;
+    }
+    &-current {
+      @include f29;
+      color: $barv;
+      margin-bottom: 3px;
+    }
+    &-target {
+      @include f29;
+      color: $azure;
+      margin-bottom: 8px;
+    }
+    &-diff {
+      @include f29;
+      color: $yellow;
+    }
+  }
 }
