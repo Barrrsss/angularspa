@@ -2,3 +2,16 @@
 @import "color";
 @import "const";
 
+.task {
+  border: 1px solid $white;
+  width: 600px;
+  height: 600px;
+  margin-left: 100px;
+  margin-top: 100px;
+  @include flexcentercolumn;
+  &__circle{
+    width: 335px;
+    height: 335px;
+    background-image: url(../../assets/circle.svg);
+  }
+}
