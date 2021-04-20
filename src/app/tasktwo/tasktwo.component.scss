@@ -1,0 +1,15 @@
+@import "mixin";
+@import "color";
+@import "const";
+
+.two  {
+  width: 379px;
+  height: 512px;
+  border-radius: 2px;
+  border: $solid1 $grayish;
+  margin-left: 150px;
+  margin-top: 150px;
+  &__header{
+
+  }
+}
