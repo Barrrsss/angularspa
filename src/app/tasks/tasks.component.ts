@@ -12,4 +12,8 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(): void {
+    console.log(localStorage.getItem('auth_token'));
+    localStorage.removeItem('auth_token');
+  }
 }

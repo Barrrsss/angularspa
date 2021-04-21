@@ -1,15 +1,15 @@
-<div class="task">
-  <div class="task__circle">
+<div class="task" *ngFor="let item of items">
+  <div class="task__circle"  >
     <div class="task__progress">
-      <div class="task__data">
+      <div class="task__data" *ngFor="let item of items">
         <div class="task__data-title">ТН</div>
-        <div class="task__data-name">Выработка</div>
-        <div class="task__data-current">30 094</div>
-        <div class="task__data-target">31 265</div>
-        <div class="task__data-diff">-1 171</div>
+        <div class="task__data-name">{{item.name}}</div>
+        <div class="task__data-current">{{item.current}}</div>
+        <div class="task__data-target">{{item.target}}</div>
+        <div class="task__data-diff">{{item.current - item.target}}</div>
       </div>
       <circle-progress
-        [percent]="96"
+        [percent]="item.current / (item.target / 100)"
         [radius]="126"
         [outerStrokeWidth]="6"
         [innerStrokeWidth]="6"
