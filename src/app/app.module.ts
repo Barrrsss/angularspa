@@ -7,6 +7,9 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskoneComponent } from './taskone/taskone.component';
 import { TasktwoComponent } from './tasktwo/tasktwo.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ItemComponent } from './item/item.component';
+import {AppRoutingModule} from './app-routing/app-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     LoginComponent,
     TasksComponent,
     TaskoneComponent,
-    TasktwoComponent
+    TasktwoComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       backgroundPadding: -3,
       backgroundStrokeWidth: 5,
       showUnits: false
-    })
+    }),
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

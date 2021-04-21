@@ -1,9 +1,9 @@
 <div class="tasks__header">
-  <button class="tasks__logout"></button>
+  <button class="tasks__logout" routerLink="/"></button>
   <div class="tasks__buttons">
-    <button class="tasks__button">1 задание</button>
-    <button class="tasks__button">2 задание</button>
+    <button class="tasks__button" routerLink="task-one" routerLinkActive="tasks__button_active">1 задание</button>
+    <button class="tasks__button" routerLink="task-two" routerLinkActive="tasks__button_active">2 задание</button>
   </div>
 
-  <app-tasktwo></app-tasktwo>
+  <router-outlet></router-outlet>
 </div>

@@ -4,12 +4,121 @@
 
 .two  {
   width: 379px;
-  height: 512px;
   border-radius: 2px;
   border: $solid1 $grayish;
   margin-left: 150px;
-  margin-top: 150px;
+  margin-top: 50px;
   &__header{
+    width: 379px;
+    height: 40px;
+    background-color: $grayish;
+    @include flexrowcenter;
+  }
+  &__menu {
+    width: 24px;
+    height: 24px;
+    background-image: url(../../assets/two-menu.svg);
+    margin-left: 15px;
+  }
+  &__title {
+    @include tahomanormal;
+    @include f14;
+    color: $white;
+    margin-left: 8px;
+  }
+  &__option {
+    background-image: url(../../assets/two-option.svg);
+    width: 24px;
+    height: 24px;
+    margin-left: 231px;
+  }
+  &__table {
+    @include flexrowcenter;
+    @include tahomanormal;
+    @include f12;
+    color: $lam;
+    background: #1C1F2B;
+    &-param {
+      margin-left: 20px;
+    }
+    &-fact {
+      margin-left: 170px;
+    }
+    &-model {
+      margin-left: 30px;
+    }
+  }
+  &__elements {
+    width: 379px;
+    height: 350px;
+    align-items: center;
+    overflow: auto;
 
   }
+  &__element {
+    width: 353px;
+    height: 30px;
+    background-color: $grayish;
+    margin-top: 10px;
+    margin-left: 9px;
+    margin-right: 0;
+    border-left: 2px solid $deepblue;
+    @include flexrowcenter;
+
+    &-cross {
+      width: 16px;
+      height: 15px;
+      background-image: url(../../assets/cross.svg);
+      margin-left: 10px;
+      margin-right: 9px;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-45deg);
+      &:hover{
+        @include pointer;
+        transform: rotate(90deg);
+      }
+    }
+    &-title {
+      @include tahomanormal;
+      color: $barv;
+      @include f12;
+      margin-right: 182px;
+    }
+    &-error {
+      @include tahomanormal;
+      @include f12;
+      color: $lam;
+    }
+  }
+}
+
+::-webkit-scrollbar-button {
+  background-repeat:no-repeat;
+  width:5px;
+  height:0;
+}
+
+::-webkit-scrollbar-track {
+  background-color:transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color:$deepblue;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color:$grayish;
+}
+
+::-webkit-resizer{
+  background-repeat:no-repeat;
+  width:4px;
+  height:0;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
 }

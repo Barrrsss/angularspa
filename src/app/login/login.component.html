@@ -15,12 +15,18 @@
     </div>
     <div class="login__field">
       <div class="login__image-password"></div>
-      <input class="login__input login__input_password" placeholder="Пароль" type="text">
-      <button class="login__image-password_eye"></button>
+      <input class="login__input login__input_password" placeholder="Пароль" type="text" [ngClass]="{
+      '': passwordStatus === false,
+      'login__input_password-none': passwordStatus === true
+      }">
+      <button class="login__image-password_eye" [ngClass]="{
+      '': passwordStatus === false,
+      'login__image-password_eye-active': passwordStatus === true
+      }" (click)="onClick($event)" ></button>
       <span class="login__focus"></span>
     </div>
   </form>
-  <button class="login__button" type="submit">
+  <button class="login__button" type="submit" routerLink="/tasks/task-one">
     Войти
   </button>
 </div>
