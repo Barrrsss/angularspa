@@ -8,6 +8,19 @@
   border: $solid1 $grayish;
   margin-left: 150px;
   margin-top: 50px;
+
+  &__visibility{
+    height: 0;
+    opacity: 0;
+    transition: height 500ms 100ms, opacity 0.8s linear;
+    &_open {
+      height: 100%;
+      visibility: visible;
+      opacity: 1;
+      transition: height 0ms 0ms, opacity 100ms 0ms;
+    }
+  }
+
   &__header{
     width: 379px;
     height: 40px;
@@ -63,8 +76,10 @@
     margin-left: 9px;
     margin-right: 0;
     border-left: 2px solid $deepblue;
-    @include flexrowcenter;
-
+    @include flexrowsbcenter;
+    &_position {
+      display: flex;
+    }
     &-cross {
       width: 16px;
       height: 15px;
@@ -83,12 +98,12 @@
       @include tahomanormal;
       color: $barv;
       @include f12;
-      margin-right: 182px;
     }
     &-error {
       @include tahomanormal;
       @include f12;
       color: $lam;
+      margin-right: 17px;
     }
   }
 }

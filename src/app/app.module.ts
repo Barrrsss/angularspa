@@ -11,7 +11,6 @@ import { ItemComponent } from './item/item.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import { EventsService} from './events.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +45,7 @@ import { EventsService} from './events.service';
         AppRoutingModule,
         FormsModule
     ],
-  providers: [EventsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

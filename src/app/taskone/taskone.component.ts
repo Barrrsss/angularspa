@@ -13,12 +13,10 @@ export class TaskoneComponent implements OnInit {
     {name: 'Выработка',
       current: 30094,
       target: 31265,
-      diff: -1171,
     },
     {name: 'Выработка',
       current: 15000,
       target: 30000,
-      diff: -1171,
     }
   ];
 

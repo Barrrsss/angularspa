@@ -17,7 +17,6 @@ export class TasksComponent implements OnInit {
   }
 
   logout(): void {
-    console.log(localStorage.getItem('auth_token'));
     localStorage.removeItem('auth_token');
   }
 }
