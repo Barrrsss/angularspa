@@ -3,17 +3,26 @@
 @import "const";
 
 .task {
-  width:600px;
+  width:800px;
   height: 400px;
   margin-left: 100px;
   margin-top: 30px;
-  @include flexcentercolumn;
+  display: flex;
+  flex-direction: row;
+
   &__circle{
     width: 335px;
     height: 360px;
     background-image: url(../../assets/circle.svg);
     background-position: center;
     background-repeat: no-repeat;
+    margin-right: 50px;
+    position: relative;
+    &-progress {
+      position: absolute;
+      top: 8.5%;
+      left: 5.5%;
+    }
   }
   &__progress {
     margin-left: 18px;
@@ -23,8 +32,8 @@
     color: white;
     position: absolute;
     z-index: 2;
-    left: 340px;
-    top: 245px;
+    left: 32%;
+    top: 21%;
     @include tahomanormal;
     @include flexcentercolumn;
     &-title{
@@ -51,5 +60,17 @@
       @include f29;
       color: $yellow;
     }
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 150px;
+  @include tahomanormal;
+  color: $barv;
+  &_ml {
+    margin-left: 220px;
   }
 }

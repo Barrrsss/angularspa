@@ -1,14 +1,14 @@
-<div class="task" *ngFor="let item of items">
-  <div class="task__circle"  >
+<div class="task" >
+  <div class="task__circle" *ngFor="let item of items">
     <div class="task__progress">
-      <div class="task__data" *ngFor="let item of items">
+      <div class="task__data">
         <div class="task__data-title">ТН</div>
         <div class="task__data-name">{{item.name}}</div>
         <div class="task__data-current">{{item.current}}</div>
         <div class="task__data-target">{{item.target}}</div>
         <div class="task__data-diff">{{item.current - item.target}}</div>
       </div>
-      <circle-progress
+      <circle-progress class="task__circle-progress"
         [percent]="item.current / (item.target / 100)"
         [radius]="126"
         [outerStrokeWidth]="6"
@@ -30,3 +30,20 @@
 
   </div>
 </div>
+<div class="inputs">
+  <div>
+    <p>Текущее значение</p>
+    <input type="text" [(ngModel)]="items[0].current" />
+    <p>Цель</p>
+    <input type="text" [(ngModel)]="items[0].target" />
+  </div>
+  <div class="inputs_ml">
+    <p>Текущее значение</p>
+    <input type="text" [(ngModel)]="items[1].current" />
+    <p>Цель</p>
+    <input type="text" [(ngModel)]="items[1].target" />
+  </div>
+
+
+</div>
+

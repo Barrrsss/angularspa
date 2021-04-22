@@ -12,8 +12,8 @@
   <div class="two__elements">
     <div>
       <div class="two__element">
-        <div class="two__element-cross"></div>
-        <div class="two__element-title">Сырьё</div>
+        <div class="two__element-cross" (click)="changeVisibility()"></div>
+        <div class="two__element-title">{{event.res.name}}</div>
         <div class="two__element-error">Отключений: <span class="two__element-error-counter">0</span></div>
       </div>
       <app-item></app-item>
