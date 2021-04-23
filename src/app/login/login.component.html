@@ -32,8 +32,8 @@
 </div>
 
 <section class='popup ' [ngClass]="{
-      '': this.authService.loggedin.error == false,
-      'popup_opened': this.authService.loggedin.error == true
+      '': this.authService.logIn == false,
+      'popup_opened': this.authService.logIn == true
       }">
   <div class="popup__container">
     <div class="popup__area popup__area_tooltip">

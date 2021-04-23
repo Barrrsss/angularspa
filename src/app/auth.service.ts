@@ -17,6 +17,8 @@ export class AuthService {
     error: false,
   };
 
+
+
   constructor(private http: HttpClient, private router: Router) { }
 
   url = 'https://krasnov.backendmesto.nomoredomains.club';
@@ -32,6 +34,7 @@ export class AuthService {
       .subscribe((resp: any) => {
         this.router.navigate(['tasks/task-one']);
         localStorage.setItem('auth_token', resp.token);
+        console.log(this.logIn);
       },
         (error: any) => {
         this.loggedin.error = true;
@@ -41,5 +44,7 @@ export class AuthService {
   );
 
 }
-
+  public get logIn(): boolean {
+    return (localStorage.getItem('auth_token') !== null);
+  }
 }
