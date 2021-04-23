@@ -11,6 +11,7 @@ import { ItemComponent } from './item/item.component';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {AuthService} from './auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {FormsModule} from '@angular/forms';
   ],
     imports: [
         BrowserModule,
-      HttpClientModule,
+         HttpClientModule,
         NgCircleProgressModule.forRoot({
             radius: 100,
             outerStrokeWidth: 16,
@@ -45,7 +46,7 @@ import {FormsModule} from '@angular/forms';
         AppRoutingModule,
         FormsModule
     ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
