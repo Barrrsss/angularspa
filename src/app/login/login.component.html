@@ -7,15 +7,15 @@
       <div class="login__subtitle">индустриальная экосистема</div>
     </div>
   </div>
-  <div class="login__fields">
+  <form class="login__fields" (keyup.enter)="Login()">
     <div class="login__field">
       <div class="login__image-login"></div>
-      <input class="login__input" placeholder="Логин" type="text" [(ngModel)]="email">
+      <input class="login__input" placeholder="Логин" type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
       <span class="login__focus"></span>
     </div>
     <div class="login__field">
       <div class="login__image-password"></div>
-      <input class="login__input login__input_password" [(ngModel)]="password" placeholder="Пароль" type="text" [ngClass]="{
+      <input  class="login__input login__input_password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Пароль" type="text" [ngClass]="{
       '': passwordStatus === false,
       'login__input_password-none': passwordStatus === true
       }">
@@ -25,8 +25,9 @@
       }" (click)="onClick($event)" ></button>
       <span class="login__focus"></span>
     </div>
-  </div>
-  <button class="login__button" type="submit" formmethod="POST" (click)="Login()">
+
+  </form>
+  <button class="login__button" type="submit" formmethod="POST" (click)="Login()" >
     Войти
   </button>
 </div>
