@@ -63,11 +63,13 @@
   }
   &__elements {
     width: 379px;
-    height: 350px;
+    height: 422px;
     align-items: center;
     overflow: auto;
     overflow-x:hidden;
-
+    &-margin:last-child {
+      @include m0a;
+    }
   }
   &__element {
     width: 353px;
@@ -108,6 +110,67 @@
     }
   }
 }
+.items {
+  width: 379px;
+  @include m0a;
+}
+
+.item {
+  width: 336px;
+  height: 30px;
+  margin-top: 5px;
+  margin-left: 26px;
+  border-left: 2px solid $deepblue;
+  border-right: 1px solid $grayish;
+  border-top: 1px solid $grayish;
+  border-bottom: 1px solid $grayish;
+  @include tahomanormal;
+  @include f12;
+  color: $lam;
+  @include flexrowsbcenter;
+  background: $grayish;
+  @include pointer;
+  &:first-child {
+    margin-top: 10px;
+  }
+  &_blue {
+    border-left: 2px solid $azure;
+    border-right: 1px solid $azure;
+    border-top: 1px solid $azure;
+    border-bottom: 1px solid $azure;
+  }
+  &_orange {
+    border-left: 2px solid $yellow;
+    border-right: 1px solid $yellow;
+    border-top: 1px solid $yellow;
+    border-bottom: 1px solid $yellow;
+  }
+  &__title {
+    width: 130px;
+  }
+  &__name {
+    @include flexrowsbcenter;
+    width: 188px;
+    margin-left: 8px;
+    padding-right: 2px;
+    border-right: 1px solid #1C1F2B;
+    height: 32px;
+  }
+  &__current{
+    width: 68px;
+    text-align: center;
+    border-right: 1px solid #1C1F2B;
+    height: 32px;
+    @include m0a;
+    line-height: 32px;
+  }
+  &__target {
+    width: 68px;
+    text-align: center;
+
+  }
+}
+
 
 ::-webkit-scrollbar-button {
   background-repeat:no-repeat;

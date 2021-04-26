@@ -1,11 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {DataService} from '../data.service';
 
-
-export interface  Events {
-  id: number;
-  name: string;
-  visibility: boolean;
-}
 @Component({
   selector: 'app-tasktwo',
   templateUrl: './tasktwo.component.html',
@@ -13,43 +8,19 @@ export interface  Events {
 })
 export class TasktwoComponent implements OnInit {
 
-  constructor() {
+  constructor(public dataService: DataService) {
 
   }
-
-  public events: Events[]  = [
-    {
-      id: 1,
-      name: 'Сырьё',
-      visibility: true,
-    },
-    {
-      id: 2,
-      name: 'Топливо газообразное',
-      visibility: true,
-    },
-    {
-      id: 3,
-      name: 'Жидкое топливо',
-      visibility: true,
-    },
-    {
-      id: 4,
-      name: 'Дымовые газы',
-      visibility: true,
-    },
-    {
-      id: 5,
-      name: 'Воздух',
-      visibility: true,
-    },
-  ];
-
+  public data: DataService[] = [];
 
   ngOnInit(): void {
   }
   changeVisibility(id): void {
-    const index = this.events.findIndex(e => e.id === id);
-    this.events[index].visibility = !this.events[index].visibility;
+    const index = this.dataService.data.findIndex(e => e.id === id);
+    this.dataService.data[index].visibility = !this.dataService.data[index].visibility;
+  }
+
+  changeStatus(data, item): void {
+    this.dataService.data[data - 1].item[item - 1].active = !this.dataService.data[data - 1].item[item - 1].active;
   }
 }

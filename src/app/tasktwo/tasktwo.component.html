@@ -10,23 +10,47 @@
     <p class="two__table-model">Модель</p>
   </div>
   <div class="two__elements">
-    <div *ngFor="let events of events; let i = number">
+    <div *ngFor="let data of dataService.data" class="two__elements-margin">
       <div class="two__element">
         <div class="two__element_position">
-          <div class="two__element-cross" (click)="changeVisibility(events.id)"></div>
-          <div class="two__element-title">{{events.name}} </div>
+          <div (click)="changeVisibility(data.id)" class="two__element-cross"></div>
+          <div class="two__element-title">{{data.name}}</div>
         </div>
-        <div class="two__element-error">Отключений: <span class="two__element-error-counter">0</span></div>
+        <div class="two__element-error">Отключений: <span class="two__element-error-counter">{{data.disc}}</span></div>
       </div>
       <div [ngClass]="{
-      'two__visibility_open': events.visibility === true,
-      'two__visibility': events.visibility === false
+      'two__visibility_open': data.visibility === true,
+      'two__visibility': data.visibility === false
       }">
-        <app-item  ></app-item>
+        <div class="items">
+          <div (click)="changeStatus(data.id, item.id)" *ngFor="let item of data.item; let i = number"
+               [ngClass]="{
+      '': item.status === 'normal',
+      'item_blue': item.active === true,
+      'item_orange': item.status === 'danger'
+      }"
+
+               class="item">
+            <div class="item__name">
+              <p class="item__title">
+                {{item.name}}
+              </p>
+              <p class="item__units">
+                Ед.изм.
+              </p>
+            </div>
+
+            <p class="item__current">
+              {{item.current}}
+            </p>
+            <p class="item__target">
+              {{item.target}}
+            </p>
+          </div>
+
+        </div>
+
       </div>
-
-
-
     </div>
   </div>
 
