@@ -51,6 +51,7 @@
     @include f12;
     color: $lam;
     background: #1C1F2B;
+    margin-bottom: 5px;
     &-param {
       margin-left: 20px;
     }
@@ -67,7 +68,8 @@
     align-items: center;
     overflow: auto;
     overflow-x:hidden;
-    &-margin:last-child {
+    background-color: #1C1F2B;;
+    &-margin {
       @include m0a;
     }
   }
@@ -75,7 +77,6 @@
     width: 353px;
     height: 30px;
     background-color: $grayish;
-    margin-top: 10px;
     margin-left: 9px;
     margin-right: 0;
     border-left: 2px solid $deepblue;
@@ -120,6 +121,7 @@
   height: 30px;
   margin-top: 5px;
   margin-left: 26px;
+  margin-bottom: 5px;
   border-left: 2px solid $deepblue;
   border-right: 1px solid $grayish;
   border-top: 1px solid $grayish;
