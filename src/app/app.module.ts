@@ -10,7 +10,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {AuthService} from './auth.service';
+import {AuthService} from './Services/auth.service';
+import { CircleSvgComponent } from './circle-svg/circle-svg.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {AuthService} from './auth.service';
     TasksComponent,
     TaskoneComponent,
     TasktwoComponent,
+    CircleSvgComponent,
   ],
     imports: [
         BrowserModule,

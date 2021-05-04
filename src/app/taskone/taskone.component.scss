@@ -1,7 +1,10 @@
 @import "mixin";
 @import "color";
 @import "const";
-
+.svg  {
+  width: 100px;
+  height: 200px;
+}
 .task {
   width:800px;
   height: 400px;

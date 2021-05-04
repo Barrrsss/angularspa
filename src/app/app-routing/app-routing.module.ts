@@ -4,8 +4,8 @@ import { LoginComponent } from '../login/login.component';
 import { TasksComponent } from '../tasks/tasks.component';
 import { TaskoneComponent } from '../taskone/taskone.component';
 import { TasktwoComponent } from '../tasktwo/tasktwo.component';
-import {AuthGuard} from '../auth.guard';
-import {UnauthguardGuard} from '../unauthguard.guard';
+import {AuthGuard} from '../guards/auth.guard';
+import {UnauthguardGuard} from '../guards/unauthguard.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [UnauthguardGuard], },

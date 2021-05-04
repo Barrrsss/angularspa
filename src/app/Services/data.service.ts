@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of, Observable } from 'rxjs';
 
 export interface  Data {
   id: number;
@@ -7,6 +8,10 @@ export interface  Data {
   visibility: boolean;
   item: Item[];
 }
+export interface DiagramModel {
+  value: number;
+}
+
 interface  Item {
   id: number;
   name: string;
@@ -22,6 +27,13 @@ interface  Item {
 export class DataService {
 
   constructor() { }
+  dataMediumDiagram = [
+    { "value": 33994 },
+    { "value":  35000 }
+  ];
+  getMediumDiagramData(): Observable<DiagramModel[]>{
+    return of(this.dataMediumDiagram);
+  }
   public data: Data[]  = [
     {
       id: 1,
