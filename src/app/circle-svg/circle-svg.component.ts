@@ -10,10 +10,11 @@ import { DataService } from '../Services/data.service';
 export class CircleSvgComponent implements OnInit {
   constructor(private diagram: DataService) { }
   @ViewChild('background') background: ElementRef;
+  @ViewChild('background_two') background_two: ElementRef;
   @ViewChild('circles') circles: ElementRef;
   @ViewChild('element') element: ElementRef;
-  private width = 335;
-  private height = 335;
+  private width = 376;
+  private height = 376;
   private colorsMedium: any;
   private dataMediumDiagram = [];
 
@@ -42,20 +43,25 @@ export class CircleSvgComponent implements OnInit {
       .startAngle(start * 2 * Math.PI)
       .endAngle(end * 2 * Math.PI);
   }
-  private createSvgBackgroundGray(){
-
+  private arcBackground(){
     this.createSvg(this.background)
       .append('path')
-      .attr('d', this.arcSemicircle(275, 0, 40, -0.362, 0.364))
-      .style('fill', 'rgba(39, 42, 56, 1)');
+      .attr('d', this.arcSemicircle(315, 0, 40, -0.350, 0.350))
+      .style('fill', '#1C1F2B');
   }
-  private createCircles(){
+  private arcBackgroundTwo(){
+    this.createSvg(this.background_two)
+      .append('path')
+      .attr('d', this.arcSemicircle(315, 0, 40, -0.354, 0.354))
+      .style('fill', '#303549');
+  }
+  private innerArc(){
     const svg = this.createSvg(this.circles);
-    const radius = Math.min(this.width, this.height) - 60;
-    const dashDev = Math.PI / 100;
+    const radius = Math.min(this.width, this.height) - 33;
+    const output = Math.PI / 150;
     const arc = (start: number, end: number) => d3.arc()
       .innerRadius(radius / 2 - 60)
-      .outerRadius(radius / 2 - 55)
+      .outerRadius(radius / 2 - 56)
       .startAngle(start * 2 * Math.PI)
       .endAngle(end * 2 * Math.PI);
 
@@ -65,8 +71,8 @@ export class CircleSvgComponent implements OnInit {
     arr.forEach((item, i) => {
       svg
         .append('path')
-        .attr('d', arc(-0.35 + i * 1 / 50, -0.35 + (i + 1) * 1 / 50 - dashDev))
-        .style('fill', 'rgba(39, 42, 56, 0.6)');
+        .attr('d', arc(-0.35 + i * 0.00315 / 0.25, -0.35 + (i + 1) * 0.00315 / 0.25 - output))
+        .style('fill', 'rgba(39, 42, 56, 0.5)');
     });
   }
   private createColorsMedium(): void {
@@ -116,8 +122,9 @@ export class CircleSvgComponent implements OnInit {
 
 
 
-    this.createCircles();
-    this.createSvgBackgroundGray();
+    this.innerArc();
+    this.arcBackground();
+    this.arcBackgroundTwo();
 
     d3.select('#backgroundMedium')
       .selectAll('p')
