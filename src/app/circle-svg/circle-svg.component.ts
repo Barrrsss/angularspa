@@ -71,7 +71,7 @@ export class CircleSvgComponent implements OnInit {
     arr.forEach((item, i) => {
       svg
         .append('path')
-        .attr('d', arc(-0.35 + i * 0.00315 / 0.25, -0.35 + (i + 1) * 0.00315 / 0.25 - output))
+        .attr('d', arc(-0.345 + i * 0.00312 / 0.25, -0.345 + (i + 1) * 0.00312 / 0.25 - output))
         .style('fill', 'rgba(39, 42, 56, 0.5)');
     });
   }
@@ -94,7 +94,7 @@ export class CircleSvgComponent implements OnInit {
 
     const svg = this.createSvg(this.element);
     const radius = Math.min(this.width, this.height) - 60;
-    const dashDev = Math.PI / 300;
+    const dashDev = Math.PI / 340;
     const pie = d3.pie();
     const arc = (start, end) => d3.arc()
       .innerRadius(radius / 2 - 7)
@@ -102,13 +102,13 @@ export class CircleSvgComponent implements OnInit {
       .startAngle(start * 2 * Math.PI)
       .endAngle(end * 2 * Math.PI);
 
-    let arr = new Array(107);
+    let arr = new Array(125);
     arr = [...arr.map((x, i) => i)];
 
     arr.forEach((item, i) => {
       svg
         .append('path')
-        .attr('d', arc(-0.35 + i * 1 / 150, -0.35 + (i + 1) * 1 / 150 - dashDev));
+        .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev));
     });
 
     svg
