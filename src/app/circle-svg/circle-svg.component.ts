@@ -15,7 +15,6 @@ export class CircleSvgComponent implements OnInit {
   @ViewChild('element') element: ElementRef;
   private width = 376;
   private height = 376;
-  private colorsMedium: any;
   private dataMediumDiagram = [];
 
   ngOnInit(): void {
@@ -24,7 +23,6 @@ export class CircleSvgComponent implements OnInit {
     });
   }
   ngAfterViewInit(): void {
-
     this.createDiagramMedium();
   }
 
@@ -78,19 +76,19 @@ export class CircleSvgComponent implements OnInit {
 
   private createDiagramMedium(){
 
-    const textDataMedium =
-      [
-        'ТН',
-        this.dataMediumDiagram[0],
-        this.dataMediumDiagram[0] + this.dataMediumDiagram[1],
-        '-' + this.dataMediumDiagram[1],
-        'План  переработки'
-      ];
+    // const textDataMedium =
+    //   [
+    //     'ТН',
+    //     this.dataMediumDiagram[0],
+    //     this.dataMediumDiagram[0] + this.dataMediumDiagram[1],
+    //     '-' + this.dataMediumDiagram[1],
+    //     'План  переработки'
+    //   ];
 
     const svg = this.createSvg(this.element);
     const radius = Math.min(this.width, this.height) - 60;
     const dashDev = Math.PI / 340;
-    const pie = d3.pie();
+    // const pie = d3.pie();
     const arc = (start, end) => d3.arc()
       .innerRadius(radius / 2 - 7)
       .outerRadius(radius / 2 - 33)
@@ -116,6 +114,8 @@ export class CircleSvgComponent implements OnInit {
         .append('path')
         .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev))
         .attr('fill', '#0089FF')
+        .style('stroke-dasharray', '0 642 389 253')
+        .style('stroke', 'red');
     });
     this.innerArc();
     this.arcBackground();
