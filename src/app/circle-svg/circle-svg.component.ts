@@ -116,17 +116,16 @@ export class CircleSvgComponent implements OnInit {
         .append('path')
         .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev))
         .attr('fill', '#0089FF')
-        .attr('background-image', 'url(../../assets/logoutactive.svg)');
     });
     this.innerArc();
     this.arcBackground();
     this.arcBackgroundTwo();
 
-    d3.select('#backgroundMedium')
-      .selectAll('p')
-      .data(textDataMedium)
-      .text(function(d, i) {
-        return d;
-      });
+    // d3.select('#backgroundMedium')
+    //   .selectAll('p')
+    //   .data(textDataMedium)
+    //   .text(function(d, i) {
+    //     return d;
+    //   });
   }
 }
