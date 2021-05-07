@@ -28,8 +28,8 @@ export class DataService {
 
   constructor() { }
   dataMediumDiagram = [
-    { "value": 33994 },
-    { "value":  35000 }
+    { "value": 1000 },
+    { "value":  36859 }
   ];
   getMediumDiagramData(): Observable<DiagramModel[]>{
     return of(this.dataMediumDiagram);

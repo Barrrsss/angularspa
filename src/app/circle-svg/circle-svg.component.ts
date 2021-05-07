@@ -106,19 +106,18 @@ export class CircleSvgComponent implements OnInit {
         .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev))
         .attr('fill', '#F7931E');
     });
-
-    let arr1 = new Array(50);
+    const length: number = parseFloat((this.dataMediumDiagram[0] / (this.dataMediumDiagram[1] / 125)).toFixed(0));
+    console.log(length);
+    let arr1 = new Array(length );
     arr1 = [...arr1.map((x, i) => i)];
 
     arr1.forEach((item, i) => {
       svg
         .append('path')
         .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev))
-        .attr('fill', '#0089FF');
+        .attr('fill', '#0089FF')
+        .attr('background-image', 'url(../../assets/logoutactive.svg)');
     });
-    // svg
-    //   .selectAll('path')
-    //   .attr('fill', '#0089FF');
     this.innerArc();
     this.arcBackground();
     this.arcBackgroundTwo();
