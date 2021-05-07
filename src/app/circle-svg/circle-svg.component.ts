@@ -75,13 +75,8 @@ export class CircleSvgComponent implements OnInit {
         .style('fill', 'rgba(39, 42, 56, 0.5)');
     });
   }
-  private createColorsMedium(): void {
-    this.colorsMedium = d3.scaleOrdinal()
-      .domain(this.dataMediumDiagram)
-      .range(['#0089FF', 'orange']);
-  }
+
   private createDiagramMedium(){
-    this.createColorsMedium();
 
     const textDataMedium =
       [
@@ -108,20 +103,22 @@ export class CircleSvgComponent implements OnInit {
     arr.forEach((item, i) => {
       svg
         .append('path')
-        .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev));
+        .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev))
+        .attr('fill', '#F7931E');
     });
 
-    svg
-      .selectAll('path')
-      // .data(this.dataMediumDiagram)
-      .attr('fill', (d, i) => (this.colorsMedium(i)));
+    let arr1 = new Array(50);
+    arr1 = [...arr1.map((x, i) => i)];
 
-    //   .append('path')
-    //       .attr('d', arc())
-    //       .attr('fill', (d, i) => (this.colorsMedium(i)))
-
-
-
+    arr1.forEach((item, i) => {
+      svg
+        .append('path')
+        .attr('d', arc(-0.3425 + i * 1 / 180, -0.3425 + (i + 1) * 1 / 180 - dashDev))
+        .attr('fill', '#0089FF');
+    });
+    // svg
+    //   .selectAll('path')
+    //   .attr('fill', '#0089FF');
     this.innerArc();
     this.arcBackground();
     this.arcBackgroundTwo();
