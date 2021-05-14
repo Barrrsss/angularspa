@@ -2,22 +2,30 @@
 @import "color";
 @import "const";
 
+
 .task {
-  width:800px;
+  width:100%;
   height: 400px;
-  margin-left: 100px;
   margin-top: 30px;
   display: flex;
   flex-direction: row;
-
+  &__arc {
+    position: absolute;
+  }
   &__circle{
     width: 335px;
     height: 360px;
+    margin-left: 50px;
     background-image: url(../../assets/circle.svg);
     background-position: center;
     background-repeat: no-repeat;
     margin-right: 50px;
     position: relative;
+    &_position {
+      @include flexcentercolumn;
+      position: relative;
+      margin-left: 100px;
+    }
     &-progress {
       position: absolute;
       top: 8.5%;
@@ -34,22 +42,39 @@
     z-index: 2;
     left: 32%;
     top: 21%;
-    @include tahomanormal;
+    @include tahoma;
     @include flexcentercolumn;
     &-title{
       @include f24;
       color: $deepblue;
-      margin-bottom: 19px;
+      @include m0a;
+      &_two {
+        @include tahoma;
+        margin-top: 40px;
+        @include f18;
+      }
     }
     &-name {
       @include f24;
       color: $barv;
       margin-bottom: 15px;
+      margin-top: 19px;
+      &_two {
+        width: 128px;
+        text-align: center;
+        @include m0a;
+        @include f24;
+        @include flexcolumn;
+      }
     }
     &-current {
       @include f29;
       color: $barv;
       margin-bottom: 3px;
+      &_two {
+        z-index: 2;
+        border-bottom: 2px dashed rgba(39, 42, 56, 0.5);
+      }
     }
     &-target {
       @include f29;
@@ -67,10 +92,28 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: 150px;
+  margin-left: 120px;
   @include tahomanormal;
   color: $barv;
   &_ml {
     margin-left: 220px;
+  }
+}
+@media screen and (max-width: 1365px) {
+  .task {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .task__circle_position {
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .task__circle:nth-child(2n) {
+    margin-top: 200px;
+  }
+  .inputs_ml {
+    margin-left: -200px;
+    margin-top: 530px;
   }
 }

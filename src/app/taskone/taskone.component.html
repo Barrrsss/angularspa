@@ -2,48 +2,63 @@
   <div class="task__circle" *ngFor="let item of items">
     <div class="task__progress">
       <div class="task__data">
-        <div class="task__data-title">ТН</div>
-        <div class="task__data-name">{{item.name}}</div>
+        <p class="task__data-title">ТН</p>
+        <p class="task__data-name">{{item.name}}</p>
         <div class="task__data-current">{{item.current}}</div>
         <div class="task__data-target">{{item.target}}</div>
         <div class="task__data-diff">{{item.current - item.target}}</div>
       </div>
       <circle-progress class="task__circle-progress"
-        [percent]="item.current / (item.target / 100)"
-        [radius]="126"
-        [outerStrokeWidth]="6"
-        [innerStrokeWidth]="6"
-        [outerStrokeColor]="'#fff'"
-        [innerStrokeColor]="'rgba(247, 147, 30, 0.2)'"
-        [animation]="true"
-        [animationDuration]="300"
-        [title] = ''
-        [subtitle] = ''
-        [space] = -6
-        [backgroundColor]="'#12151E'"
-        [backgroundStroke]="'rgba(39, 42, 56, 0.5)'"
-        [backgroundStrokeWidth]=18
+                       [percent]="item.current / (item.target / 100)"
+                       [radius]="126"
+                       [outerStrokeWidth]="6"
+                       [innerStrokeWidth]="6"
+                       [outerStrokeColor]="'#fff'"
+                       [innerStrokeColor]="'rgba(247, 147, 30, 0.2)'"
+                       [animation]="true"
+                       [animationDuration]="300"
+                       [title] = ''
+                       [subtitle] = ''
+                       [space] = -6
+                       [backgroundColor]="'#12151E'"
+                       [backgroundStroke]="'rgba(39, 42, 56, 0.5)'"
+                       [backgroundStrokeWidth]=18
       >
       </circle-progress>
 
     </div>
 
   </div>
+
+  <div class="task__circle task__circle_position" >
+    <div class="task__arc" #background_two></div>
+    <div class="task__arc" #background></div>
+    <div class="task__arc" #task__arc></div>
+    <div class="task__arc" #arc></div>
+    <div class="task__data-title task__data-title_two">ТН</div>
+    <div class="task__data-current task__data-current_two">{{data[0].current}}</div>
+    <div class="task__data-target">{{data[0].target}}</div>
+    <div class="task__data-diff">{{data[0].current - data[0].target}}</div>
+    <div class="task__data-name task__data-name_two">План переработки</div>
+  </div>
+
+
 </div>
+
 <div class="inputs">
   <div>
     <p>Текущее значение</p>
-    <input type="text" [(ngModel)]="items[0].current" value="0"/>
+    <input type="text" [(ngModel)]="items[0].current" value="0" maxlength="7"/>
     <p>Цель</p>
-    <input type="text" [(ngModel)]="items[0].target" />
+    <input type="text" [(ngModel)]="items[0].target" maxlength="7" />
   </div>
   <div class="inputs_ml">
     <p>Текущее значение</p>
-    <input type="text" [(ngModel)]="items[1].current" />
+    <input type="text" [(ngModel)]="items[1].current" maxlength="7" />
     <p>Цель</p>
-    <input type="text" [(ngModel)]="items[1].target" />
+    <input type="text" [(ngModel)]="items[1].target" maxlength="7" />
   </div>
 
 
-</div>
 
+</div>

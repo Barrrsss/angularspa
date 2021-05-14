@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +10,15 @@ export class LoginComponent implements OnInit {
   email = '';
   password = '';
   passwordStatus = false;
+  loginStatus = true;
   constructor(public authService: AuthService) {
 
   }
 
   Login(): void {
     this.authService.login(this.email, this.password);
-    console.log(this.authService.logIn);
+    setTimeout(() => this.loginStatus = this.authService.logIn, 500);
+    setTimeout(() => this.loginStatus = true, 1000);
   }
   ngOnInit(): void {
   }

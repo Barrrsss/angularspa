@@ -19,10 +19,10 @@
       '': passwordStatus === false,
       'login__input_password-none': passwordStatus === true
       }">
-      <button class="login__image-password_eye" [ngClass]="{
+      <div class="login__image-password_eye" [ngClass]="{
       '': passwordStatus === false,
       'login__image-password_eye-active': passwordStatus === true
-      }" (click)="onClick($event)" ></button>
+      }" (click)="onClick($event)" ></div>
       <span class="login__focus"></span>
     </div>
 
@@ -32,9 +32,9 @@
   </button>
 </div>
 
-<section class='popup ' [ngClass]="{
-      '': this.authService.logIn == false,
-      'popup_opened': this.authService.logIn == true
+<section class='popup' [ngClass]="{
+      '': this.loginStatus === true,
+      'popup_opened': this.loginStatus === false
       }">
   <div class="popup__container">
     <div class="popup__area popup__area_tooltip">

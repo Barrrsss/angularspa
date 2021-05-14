@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../Services/auth.service';
 
 @Component({
   selector: 'app-tasks',
@@ -15,8 +15,6 @@ export class TasksComponent implements OnInit {
   }
 
   logout(): void {
-    console.log(this.authService.logIn);
     localStorage.removeItem('auth_token');
-    console.log(this.authService.logIn);
   }
 }

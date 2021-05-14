@@ -49,13 +49,13 @@
 
   }
   &__input {
+    width: 150px;
     background-color: transparent;
     border: 0;
     @include tahomanormal;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 40px;
     color: $white;
-    width: 150px;
     text-overflow: ellipsis;
     outline:none;
     border: none;
@@ -118,7 +118,7 @@
         @include pointer;
       }
       &-active {
-        background-image: url(../../assets/passeyefieldsactive.svg);
+        background-image: url(../../assets/passeyefieldsactive1.svg);
       }
     }
   }

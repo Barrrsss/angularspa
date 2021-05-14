@@ -6,10 +6,11 @@
   width: 379px;
   border-radius: 2px;
   border: $solid1 $grayish;
-  margin-left: 150px;
-  margin-top: 50px;
+  margin-left: 250px;
+  margin-top: 150px;
 
   &__visibility{
+    display: none;
     height: 0;
     opacity: 0;
     transition: height 500ms 100ms, opacity 0.8s linear;
@@ -51,7 +52,6 @@
     @include f12;
     color: $lam;
     background: #1C1F2B;
-    margin-bottom: 5px;
     &-param {
       margin-left: 20px;
     }
@@ -64,12 +64,13 @@
   }
   &__elements {
     width: 379px;
-    height: 422px;
+    min-height: 210px;
+    max-height: 340px;
     align-items: center;
     overflow: auto;
     overflow-x:hidden;
-    background-color: #1C1F2B;;
-    &-margin {
+    padding-bottom: 10px;
+    &-margin:last-child {
       @include m0a;
     }
   }
@@ -77,6 +78,7 @@
     width: 353px;
     height: 30px;
     background-color: $grayish;
+    margin-top: 10px;
     margin-left: 9px;
     margin-right: 0;
     border-left: 2px solid $deepblue;
@@ -121,7 +123,6 @@
   height: 30px;
   margin-top: 5px;
   margin-left: 26px;
-  margin-bottom: 5px;
   border-left: 2px solid $deepblue;
   border-right: 1px solid $grayish;
   border-top: 1px solid $grayish;
@@ -135,18 +136,15 @@
   &:first-child {
     margin-top: 10px;
   }
-  &_blue {
-    border-left: 2px solid $azure;
-    border-right: 1px solid $azure;
-    border-top: 1px solid $azure;
-    border-bottom: 1px solid $azure;
-  }
   &_orange {
+    border: 1px solid $yellow;
     border-left: 2px solid $yellow;
-    border-right: 1px solid $yellow;
-    border-top: 1px solid $yellow;
-    border-bottom: 1px solid $yellow;
   }
+  &_blue {
+    border: 1px solid $azure;
+    border-left: 2px solid $azure;
+  }
+
   &__title {
     width: 130px;
   }

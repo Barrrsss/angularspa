@@ -10,7 +10,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {AuthService} from './auth.service';
+import {AuthService} from './Services/auth.service';
 
 @NgModule({
   declarations: [
