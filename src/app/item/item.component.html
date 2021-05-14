@@ -1,0 +1,26 @@
+<div class="items">
+  <div class="item" *ngFor="let elements of elements; let i = number"
+       [ngClass]="{
+      '': elements.status === 'normal',
+      'item_blue': elements.status === 'attention',
+      'item_orange': elements.status === 'danger'
+      }"
+  >
+    <div class="item__name">
+      <p class="item__title">
+        {{elements.name}}
+      </p>
+      <p class="item__units">
+        Ед.изм.
+      </p>
+    </div>
+
+    <p class="item__current">
+      {{elements.current}}
+    </p>
+    <p class="item__target">
+      {{elements.target}}
+    </p>
+  </div>
+
+</div>
