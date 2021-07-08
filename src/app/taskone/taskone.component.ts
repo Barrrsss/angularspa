@@ -10,7 +10,7 @@ export class TaskoneComponent implements OnInit {
 
   constructor() { }
   items = [
-    {name: 'Выработка',
+    {name: 'Выработка1',
       current: 30094,
       target: 31265,
     },
