@@ -37,7 +37,7 @@ export class AuthService {
         (error: any) => {
         this.loggedin.error = true;
         setTimeout(() =>
-            this.loggedin.error = false, 10000);
+            this.loggedin.error = false, 2000);
         }
   );
 

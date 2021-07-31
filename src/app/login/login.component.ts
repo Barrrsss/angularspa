@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit {
 
   Login(): void {
     this.authService.login(this.email, this.password);
-    setTimeout(() => this.loginStatus = this.authService.logIn, 500);
-    setTimeout(() => this.loginStatus = true, 1000);
+    setTimeout(() => this.loginStatus = this.authService.logIn, 1500);
+    setTimeout(() => this.loginStatus = true, 2000);
   }
   ngOnInit(): void {
   }
