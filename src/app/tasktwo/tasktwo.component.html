@@ -10,7 +10,7 @@
     <p class="two__table-model">Модель</p>
   </div>
   <div class="two__elements">
-    <div *ngFor="let data of dataService.data" class="two__elements-margin">
+    <div *ngFor="let data of dataService.data" class="two__elements-margin" >
       <div class="two__element">
         <div class="two__element_position">
           <div (click)="changeVisibility(data.id)" class="two__element-cross"></div>
