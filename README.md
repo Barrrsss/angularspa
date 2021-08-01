@@ -4,8 +4,7 @@
 Учебное приложение на Angular во время обучения фронтенд-разработке в "Газпром"
 
 ## Ссылка
-https://barrrsss.github.io/angularspa/tasks/task-one
-
+https://barrrsss.github.io/angularspa/
 
 логин: test@mail.ru
 
